@@ -1,0 +1,74 @@
+body{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    background:black
+}
+
+.container {
+    width:200px;
+    height:200px;
+    perspective:5000px;
+    margin:100px;
+    transform: translateX(-200px);
+}
+
+.cube{
+    position: relative;
+    width:200px;
+    height:200px;
+    transform-style: preserve-3d;
+    animation: rotate 3s linear infinite;
+    transform: rotate3d(1,1,0,0deg);
+    padding: 100%;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateX(0deg) rotateY(-45deg) rotateZ(0deg);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(-45deg) rotateZ(0deg);
+    }
+}
+
+.face{
+    width: 200px;
+    height:200px;
+    background: grey;
+    position: absolute;
+    display:flex
+}
+
+.but{
+    background-color: white;
+    color: black;
+    border: none;
+    width:200px;
+    height:200px;
+    font-size: 40px;
+}
+
+.앞{
+    transform:translateZ(100px);
+}
+
+.뒤{
+    transform:translateZ(-100px) rotateY(180deg);
+}
+
+.왼{
+    transform:translateX(-100px) rotateY(-90deg);
+}
+
+.오{
+    transform:translateX(100px) rotateY(90deg);
+}
+
+.위{
+    transform:translateY(100px) rotateX(90deg);
+}
+
+.아래{
+    transform:translateY(-100px) rotateX(-90deg);
+}
